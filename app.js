@@ -16,17 +16,31 @@ function Game(time) {
 // `Game.prototype.init` kicks off a new game with a board and two players
 Game.prototype.init = function() {
   // Remove choice screen. Place avatars. Place effects (fish?)? Ready/Set/Go?
+  //Set player2 name === 'computer'(change case) to automate player2?
   var player1 = new Player($("#player1Name").val(), $('#player1Color option:selected').val());
   var player2 = new Player($("#player2Name").val(), $('#player2Color option:selected').val());
   $("div#t0up").append(player1.imgR);
   $("div#t0down").append(player2.imgR);
-  readySetGo('READY', 'ready');
-};
-function readySetGo(get, im){
   $("div#formDiv").empty();
-  $("div#formDiv").prepend('<h1 style="font-size: 5em"><strong>GET</strong></h1>');
-  $("div#formDiv").append('<h1 style="font-size: 5em"><strong>' + get + '!</strong></h1>');
-  $("div#formDiv").append('<button id="' + im + '">I\'m ' + im + '!</button>');
+  $("div#formDiv").prepend('<h1 style="font-size: 10em">READY!</h1>');
+  readySetGo('SET!', 1000);
+  readySetGo('GO!!!', 2000);
+  setTimeout(function(){
+    $("div#formDiv").hide();
+}, 3000);
+};
+function readySetGo(rsg, timer){
+  setTimeout(function(){
+    $("h1").text(rsg);
+}, timer);
+};
+function keyboardOn(){
+//of Game?
+// functions for each button? In terms of player?
+};
+function keyboardOff(){
+//of Game?
+// functions for each button? In terms of player?
 };
 Game.prototype.end = function() {
   // Stop game. Show victory screen. Score? Time?
@@ -71,7 +85,8 @@ $( document ).ready(function(){
     game.init();
   });
 
-  $("button#ready").click(function(){
-    game.readySetGo('SET', 'set');
-  });
+
+
 });
+
+
