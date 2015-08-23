@@ -1,1 +1,100 @@
 /* Style Sheet */
+body {
+	font-family: 'Sansita One', cursive;
+	background-color: turquoise;
+	background-image: url("images/underwater-ocean-water-background.jpg");
+	background-size: cover;
+}
+
+.inForm {
+	float: left;
+
+}
+
+.formPic {
+	margin: 10px 2% 10px 3%;
+}
+
+form {
+	max-width: 35%;
+	text-align: center;
+	margin: 15px 0 15px 0;
+	z-index: 20;
+}
+
+div.box {
+    margin: 0px;
+    width: 180px;
+    height: 115px;
+    display: inline-block;
+    z-index: 10;
+}
+
+#outer {
+	margin-top: 1%;
+	margin-left: 2%;
+	position: absolute;
+}
+
+div.start {border-right: 1px dashed white;}
+
+div.finish {border-left: 1px dashed white;}
+
+div.up {
+	top: 0;
+}
+div.down {
+	bottom: 0;    
+}
+
+
+div.container{
+	border: 1px none;
+	position: relative;
+	margin: 0 auto;
+	height: 120px;
+	width: 1300px;
+	z-index: 10;
+}
+
+div#formDiv {
+	width: 666px;
+	height: 390px;
+	background-color: rgba(64, 224, 208, 0.6);
+	overflow: hidden;
+	z-index: 20;
+	margin-top: 10%;
+	margin-left: 24%;
+	position: fixed;
+	text-align: center;
+	}
+
+#trackOuter {
+	z-index: 1;
+    width: 1292px;
+    height: 720px;
+    border-width: 10px;
+    border-color: cyan;
+    border-style: ridge;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 40px;
+    margin-left: 1%;
+}
+
+#trackTop {
+	height: 235px;
+    width: 1100px;
+    border-bottom-style: ridge;
+    border-bottom-width: 10px;
+    border-color: cyan;
+}
+
+#trackMid {
+	height: 235px;
+    width: 1100px;
+    float: right;
+    border-bottom-style: ridge;
+    border-bottom-width: 10px;
+    border-color: cyan;
+}

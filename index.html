@@ -1,19 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rrrracing Game</title>
+  <title>Pod Race</title>
   <meta charset="utf-8" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="main.css">
-  <!-- Hey, where's the jquery? -->
+  <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
-  <!-- HTML Body -->
-  <h1>Rrrracing Game</h1>
-  <img src="http://www.cs.utah.edu/~gk/atwork/img/hevequip2.gif" alt="under construction"></img>
-  <!-- Game Board Here -->
-  <!-- Reset button -->
+  <div id="trackOuter">
+    <div id="trackTop" class="trackInner"></div>
+    <div id="trackMid" class="trackInner"></div>
+  </div>
+  <div id="formDiv">
+    <img src="images/gray-dolphin-r.png" class="inForm formPic"></img>
+    <form class="inForm">
+      <h1>POD RACE</h1>
+      <p>Who's the fastest dolphin in your pod?<br>The first player to the bottom right corner wins!</p>
+      <p>Type in your name and choose the color of your dolphin.</p>
+      <fieldset>
+        <legend>Player One</legend>
+        <input type="text" id="player1Name" placeholder="Player One Name">
+        <select id="player1Color" name="player1Color">
+          <option value="gray">gray</value>
+          <option value="teal">teal</value>
+          <option value="blue">blue</value>
+          <option value="green">green</value>
+          <option value="pink">pink</value>
+          <option value="purple">purple</value>
+          <option value="yellow">yellow</value>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Player Two</legend>
+        <input type="text" id="player2Name" placeholder="Player Two Name">
+        <select id="player2Color" name="player2Color">
+          <option value="teal">teal</value>
+          <option value="gray">gray</value>
+          <option value="blue">blue</value>
+          <option value="green">green</value>
+          <option value="pink">pink</value>
+          <option value="purple">purple</value>
+          <option value="yellow">yellow</value>
+        </select>
+      </fieldset>
+      <button type="button" id="nameColorBtns">Play!</button>
+    </form>
+    <img src="images/teal-dolphin-l.png" class="inForm formPic"></img>
+  </div>
+<div id="trackOuter">
+    <div id="trackTop" class="trackInner"></div>
+    <div id="trackMid" class="trackInner"></div>
+  </div>
+  <div id="outer">
+    <div class="container"> 
+      <div class="box start up" id="t0up"></div>
+      <div class="box up" id="t1up"></div>
+      <div class="box up" id="t2up"></div>
+      <div class="box up" id="t3up"></div>
+      <div class="box up" id="t4up"></div>
+      <div class="box up" id="t5up"></div>
+      <div class="box up" id="t6up"></div>
+    </div>
+    <div class="container">
+      <div class="box start down" id="t0down"></div>
+      <div class="box down" id="t1down"></div>
+      <div class="box down" id="t2down"></div>
+      <div class="box down" id="t3down"></div>
+      <div class="box down" id="t4down"></div>
+      <div class="box down" id="t5down"></div>
+      <div class="box down" id="t6down"></div>
+    </div>
+    <div class="container">
+      <div class="box up" id="t13up"></div>
+      <div class="box up" id="t12up"></div>
+      <div class="box up" id="t11up"></div>
+      <div class="box up" id="t10up"></div>
+      <div class="box up" id="t9up"></div>
+      <div class="box up" id="t8up"></div>
+      <div class="box up" id="t7up"></div>
+
+    </div>
+    <div class="container">
+      <div class="box down" id="t13down"></div>
+      <div class="box down" id="t12down"></div>
+      <div class="box down" id="t11down"></div>
+      <div class="box down" id="t10down"></div>
+      <div class="box down" id="t9down"></div>
+      <div class="box down" id="t8down"></div>
+      <div class="box down" id="t7down"></div>
+    </div>
+    <div class="container">
+      <div class="box up" id="t14up"></div>
+      <div class="box up" id="t15up"></div>
+      <div class="box up" id="t16up"></div>
+      <div class="box up" id="t17up"></div>
+      <div class="box up" id="t18up"></div>
+      <div class="box up" id="t19up"></div>
+      <div class="box finish up" id="t20up"></div>
+
+    </div>
+    <div class="container">
+      <div class="box down " id="t14down"></div>
+      <div class="box down" id="t15down"></div>
+      <div class="box down" id="t16down"></div>
+      <div class="box down" id="t17down"></div>
+      <div class="box down" id="t18down"></div>
+      <div class="box down" id="t19down"></div>
+      <div class="box finish down" id="t20down"></div>
+    </div>
+  </div>
+
 </body>
 </html>
