@@ -56,7 +56,6 @@ Player.prototype.move = function(player, time) {
         $("div#t" + (player.progress + 1) + player.side).append(player.imgR);
         player.progress += 1;
         end(player, time);
-
       }
     // movement- down
     }else if (event.keyCode === player.d){
@@ -104,10 +103,8 @@ function readySetGo(rsg, timer){
 
 function end(player, time) {
   // Stop game. Show victory screen. Score? Time?
-  console.log(player);
-  console.log(player.name);
-  console.log(time);
   $("div#formDiv").show();
+  $("div#finishLine").empty();
   $("div#formDiv").append("<br>" + player.imgR);
   $("div#formDiv").append("<h1>" + player.name + " wins!</h1><br><h1>" + (Date.now() - time)/1000 + " seconds!</h1>");
 

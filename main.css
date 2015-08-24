@@ -63,7 +63,7 @@ div#formDiv {
 	background-color: rgba(64, 224, 208, 0.6);
 	overflow: hidden;
 	z-index: 20;
-	margin-top: 10%;
+	margin-top: 12%;
 	margin-left: 24%;
 	position: fixed;
 	text-align: center;
@@ -97,4 +97,11 @@ div#formDiv {
     border-bottom-style: ridge;
     border-bottom-width: 10px;
     border-color: cyan;
+}
+
+#finishLine {
+	height: 235px;
+	width: 200px;
+	float: right;
+	padding-top: 45px;
 }
