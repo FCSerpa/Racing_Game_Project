@@ -34,7 +34,6 @@ function init() {
     player1.move(player1, time);
     player2.move(player2, time);
   }, 3000); 
-
 };
 
 // Remember: prototypes are shared functions between all game instances
@@ -103,23 +102,35 @@ function readySetGo(rsg, timer){
 
 function end(player, time) {
   // Stop game. Show victory screen. Score? Time?
+  $(window).off("keydown");
   $("div#formDiv").show();
   $("div#finishLine").empty();
   $("div#formDiv").append("<br>" + player.imgR);
   $("div#formDiv").append("<h1>" + player.name + " wins!</h1><br><h1>" + (Date.now() - time)/1000 + " seconds!</h1>");
-
+  $("div#formDiv").append('<br><button id="reset">Play Again</button>');
+  $("button#reset").click(function(){
+    playAgain();
+  });
 };
 
 function playAgain() {
-  // Redundant? Can this be built into init?
+  player1.progress = 0;
+  player2.progress = 0;
+  $("img").remove();
+  $("div#finishLine").append('<img src="images/giphy.gif">');
+  $("div#t0" + player1.side).append(player1.imgR);
+  $("div#t0" + player2.side).append(player2.imgR);
+  readySetGo('READY!', 0);
+  readySetGo('SET!', 1000);
+  readySetGo('GO!!!', 2000);
+  setTimeout(function(){
+    $("div#formDiv").hide();
+    $("div#formDiv").empty();
+    var time = Date.now();
+    player1.move(player1, time);
+    player2.move(player2, time);
+  }, 3000);
 };
-
-function restart() {
-  // Back to choices screen.
-};
-
-
-
 
 $( document ).ready(function(){
 
