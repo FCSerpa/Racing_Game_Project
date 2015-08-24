@@ -1,25 +1,14 @@
-##OOP Racing Game
-### WDI Weekend Project
+##Pod Race 2.0
+### The Dolphin Racing Game
 
-###Workflow & Submission
-Full project requirements and instructions are [here](https://github.com/sf-wdi-21/notes/blob/master/week-02/day-05/weekend_project_refactor_spec.md)! **Read that entire document before writing a line of code.**
-This file is where you will document your project.  
-
-* Fork this repository.
-* Clone this repo, the `Racing_Game_Project` repo, from *your* gitHub account onto your computer.
-* Follow the project instructions [here](https://github.com/sf-wdi-21/notes/blob/master/week-02/day-05/weekend_project_refactor_spec.md).
-* Make your changes in your local `Racing_Game_Project` repo.
-* Use either HTML or, even better, [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to format this file as you document your project.
-* `git add` and `git commit` your changes as you go.  Remember to say what you did in your commit messages!
-* `git push` to update the repo on your gitHub account.
-* Delete this section, the `Workflow & Submission` section, of this file -- you don't need it in your documentation!
+###This is a two player dolphin themed in browser racing video game.  The players can type in their names and choose their dolphins' colors, or leave them blank and use default values.  Players move their dolphins by pressing the a, s, d, w keys for Player One or j, k, l, i keys for Player Two.  As soon as you see Ready!, Set!, Go!!! rush down to the bottom right corner of the screen to win.  Or if you just want to move around, in different directions to explore the space you can do that too!
 
 
 ### Technologies Used
-*What technologies did you use while developing this project?*
+*This game is built with HTML, CSS, JavaScript, and jQuery.*
 
 ###Existing features
-*What features does your new racing app have?*
+*This game is a head to head competition between two players controlling dolphins through a race course.  The dolphins have four directions of movement.  This game allows for players to choose the name and color of their dolphin.  It has a countdown timer to start the game, and it displays the winner of the game and the winner's time at the end of the game.*
 
 ###Planned features
-*What changes would you make to your project if you continued with it in the future?*
+*The next features I want to add for this site are an option for a computer controlled dolphin, and sound effects and maybe more visual effects like bubbles.*
