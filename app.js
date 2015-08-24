@@ -17,8 +17,8 @@ function Game(time) {
 Game.prototype.init = function() {
   // Remove choice screen. Place avatars. Place effects (fish?)? Ready/Set/Go?
   //Set player2 name === 'computer'(change case) to automate player2?
-  var player1 = new Player($("#player1Name").val(), $('#player1Color option:selected').val());
-  var player2 = new Player($("#player2Name").val(), $('#player2Color option:selected').val());
+  var player1 = new Player($("#player1Name").val(), $('#player1Color option:selected').val(), 'up', 87, 83, 65, 68);
+  var player2 = new Player($("#player2Name").val(), $('#player2Color option:selected').val(), 'down', 73, 75, 74, 76);
   $("div#t0up").append(player1.imgR);
   $("div#t0down").append(player2.imgR);
   $("div#formDiv").empty();
@@ -27,7 +27,10 @@ Game.prototype.init = function() {
   readySetGo('GO!!!', 2000);
   setTimeout(function(){
     $("div#formDiv").hide();
-}, 3000);
+    player1.move(player1);
+    player2.move(player2);
+  }, 3000);
+  
 };
 function readySetGo(rsg, timer){
   setTimeout(function(){
@@ -52,7 +55,7 @@ Game.prototype.restart = function() {
   // Back to choices screen.
 };
 // A starter Player constructor.
-function Player(name, color) {
+function Player(name, color, side, u, d, l, r) {
   //this.name = ...
   //this.position = ...
   this.name = name;
@@ -60,12 +63,70 @@ function Player(name, color) {
   this.imgR = '<img src="images/' + color + '-dolphin-r.png">';
   this.imgL = '<img src="images/' + color + '-dolphin-l.png">';
   this.progress = 0;
+  this.side = side;
+  this.u = u;
+  this.d = d;
+  this.l = l;
+  this.r= r;
   //wins?
 };
 
 // Remember: prototypes are shared functions between all game instances
-Player.prototype.move = function() {
+Player.prototype.move = function(player) {
   //update player's position
+  $(window).keydown(function(e) {
+    // d movement- Player One right
+    if (event.keyCode === player.r) {
+      if ((player.progress < 6) || ((player.progress > 13) && (player.progress < 19))){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t" + (player.progress + 1) + player.side).append(player.imgR);
+        player.progress += 1;
+      } else if ((player.progress > 7) && (player.progress < 14)){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t" + (player.progress - 1) + player.side).append(player.imgR);
+        player.progress -= 1;
+      }else if (player.progress === 19){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t" + (player.progress + 1) + player.side).append(player.imgR);
+        player.progress += 1;
+        window.alert("Congratulations!  " + player.name + " wins!");
+        reset();
+      }
+    // s movement- Player One down
+    }else if (event.keyCode === player.d){
+      if (player.progress === 6){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t7" + player.side).append(player.imgL);
+        player.progress += 1;
+      } else if (player.progress === 13){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t14" + player.side).append(player.imgR);
+        player.progress += 1;
+      }
+    // a movement- Player One left
+    }else if (event.keyCode === player.l) {
+      if (((player.progress > 0) && (player.progress < 7)) || (player.progress > 14)){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t" + (player.progress - 1) + player.side).append(player.imgL);
+        player.progress -= 1;
+      } else if ((player.progress > 6) && (player.progress < 13)){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t" + (player.progress + 1) + player.side).append(player.imgL);
+        player.progress += 1;
+      }
+    // w movement- Player One up
+    }else if (event.keyCode === player.u){
+      if (player.progress === 7){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t6" + player.side).append(player.imgL);
+        player.progress -= 1;
+      } else if (player.progress === 14){
+        $("div#t" + player.progress.toString() + player.side).empty();
+        $("div#t13" + player.side).append(player.imgR);
+        player.progress -= 1;
+      }
+    }
+  });
 };
 
 
